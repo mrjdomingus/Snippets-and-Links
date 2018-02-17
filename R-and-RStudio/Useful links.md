@@ -1,4 +1,4 @@
-# RStudio
+# R and RStudio
 
 ### Customization and Startup
 
