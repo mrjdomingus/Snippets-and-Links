@@ -5,13 +5,17 @@
 # Fix missing library path on Ubunt 16.04 for ML Server 9.2.1
 .libPaths(c(.libPaths(), "/opt/microsoft/mlserver/9.2.1/libraries/RServer"))
 
+# Add env variabele for TCL/TK support
+ifelse(!nzchar(Sys.getenv("TCL_LIBRARY")), 
+       Sys.setenv(TCL_LIBRARY="/opt/microsoft/mlserver/9.2.1/runtime/R/share/tcl8.6/"), NA)
+
 local({r <- getOption("repos")
 r["CRAN"] <- "https://mran.microsoft.com"
 options(repos=r)})
 
 options(stringsAsFactors=FALSE)
 
-options(max.print=100)
+options(max.print=300)
 
 options(scipen=10)
 
