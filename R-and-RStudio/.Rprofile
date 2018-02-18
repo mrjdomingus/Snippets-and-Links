@@ -1,4 +1,4 @@
- Save this file in home directory 
+#Save this file in home directory 
 
 # Adapted from: https://www.r-bloggers.com/fun-with-rprofile-and-customizing-r-startup/ 
 
