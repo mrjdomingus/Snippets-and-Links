@@ -1,8 +1,8 @@
-# Save this file in home directory
+ Save this file in home directory 
 
-# Adapted from: https://www.r-bloggers.com/fun-with-rprofile-and-customizing-r-startup/
+# Adapted from: https://www.r-bloggers.com/fun-with-rprofile-and-customizing-r-startup/ 
 
-# Fix missing library path on Ubunt 16.04 for ML Server 9.2.1
+# Fix missing library path on Ubunt 16.04 for ML Server 9.2.1 
 .libPaths(c(.libPaths(), "/opt/microsoft/mlserver/9.2.1/libraries/RServer"))
 
 # Add env variabele for TCL/TK support
