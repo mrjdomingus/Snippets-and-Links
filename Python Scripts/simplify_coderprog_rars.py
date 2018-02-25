@@ -9,6 +9,7 @@ from zipfile import ZipFile
 import zipfile
 import string
 import shutil
+from titlecase import titlecase
 
 def main(rardir):
     """Simplifies CoderProg RAR file
@@ -35,7 +36,12 @@ def main(rardir):
 
     onlyfiles = [f for f in listdir(rardir) if isfile(join(rardir, f))]
 
+    # Loop thru all RAR files
     for filename in onlyfiles:
+        # If not a RAR file, skip file
+        if not re.search(".rar$", filename.lower()):
+            continue
+
         rar = rarfile.RarFile(join(rardir, filename))
         namelist = rar.namelist()
         zipIndex = -1
@@ -56,8 +62,7 @@ def main(rardir):
                 azw3Index = idx
                 print(namelist[azw3Index])
 
-        # First empty TMPDIR
-        
+        # First empty TMPDIR        
         files_to_clean = [f for f in listdir(TMPDIR) if isfile(join(TMPDIR, f))]
         for f in files_to_clean:
             remove(join(TMPDIR,f))
@@ -74,15 +79,17 @@ def main(rardir):
             rar.extract(namelist[azw3Index], TMPDIR)
         
         # Create zip file
-        zipname = TMPDIR + "/" + splitext(filename)[0].replace("-", " ") + ".zip"
+        zipname = TMPDIR + "/" + titlecase(splitext(filename)[0].replace("-", " ")) + ".zip"
         with ZipFile(zipname, 'w') as myzip:
             files_to_zip = [f for f in listdir(TMPDIR) if isfile(join(TMPDIR, f))]
             try:
                 for tmpfile in files_to_zip:
                     if tmpfile == basename(zipname):
                         continue
-                    rename(tmpfile, tmpfile.replace("-", " ") )
-                    myzip.write(tmpfile.replace("-", " "), compress_type=compression)
+                    nameparts = splitext(tmpfile)
+                    newfilename = titlecase(nameparts[0].replace("-", " ")) + nameparts[1]
+                    rename(tmpfile, newfilename)
+                    myzip.write(newfilename, compress_type=compression)
             finally:
                 myzip.close()
                 # Move zip file out of the way, before next cleanup
