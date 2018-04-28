@@ -16,7 +16,7 @@ def main(rardir):
 
         Will keep: 
         * any zip files (assuming these contain source code)
-        * File(s) with extension pdf XOR epub XOR azw3 (in order of preference)
+        * File(s) with extension pdf XOR epub XOR azw3 mobi (in order of preference)
 
     Arguments:
         rardir {string} -- Path of directory containing RAR files
@@ -48,6 +48,7 @@ def main(rardir):
         pdfIndex = -1
         epubIndex = -1
         azw3Index = -1
+	mobiIndex = -1
         for idx, name in enumerate(namelist):
             if re.search(".zip$", name.lower()):
                 zipIndex = idx
@@ -61,6 +62,9 @@ def main(rardir):
             if re.search(".azw3$", name.lower()):
                 azw3Index = idx
                 print(namelist[azw3Index])
+            if re.search(".mobi$", name.lower()):
+                mobiIndex = idx
+                print(namelist[mobiIndex])
 
         # First empty TMPDIR        
         files_to_clean = [f for f in listdir(TMPDIR) if isfile(join(TMPDIR, f))]
@@ -77,6 +81,8 @@ def main(rardir):
             rar.extract(namelist[epubIndex], TMPDIR)
         elif azw3Index > -1:
             rar.extract(namelist[azw3Index], TMPDIR)
+        elif mobiIndex > -1:
+            rar.extract(namelist[mobiIndex], TMPDIR)
         
         # Create zip file
         zipname = TMPDIR + "/" + titlecase(splitext(filename)[0].replace("-", " ")) + ".zip"
