@@ -48,7 +48,7 @@ def main(rardir):
         pdfIndex = -1
         epubIndex = -1
         azw3Index = -1
-	mobiIndex = -1
+        mobiIndex = -1
         for idx, name in enumerate(namelist):
             if re.search(".zip$", name.lower()):
                 zipIndex = idx
