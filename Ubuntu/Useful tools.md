@@ -14,6 +14,15 @@
 
 [https://code.visualstudio.com/insiders/](https://code.visualstudio.com/insiders/)
 
+### Useful VSC extensions
+* Vetur
+* Debugger for Chrome
+* ESLint
+* Docker
+* Beautify
+* npm
+* Quokka.js
+
 ## Gitkraken
 
 [https://www.gitkraken.com/](https://www.gitkraken.com/)<br>
