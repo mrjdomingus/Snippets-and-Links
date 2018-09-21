@@ -23,3 +23,6 @@ Execute `docker run --network="host" nginx:custom`
 
 ### Navigate to website
 In this example you should navigate to `http://mynuxt.com` which will be redirected to `http://172.0.0.1:3000` (the nuxt app).
+
+### Instructions on how to enable HTTPS/SSL in nginx
+See [Configuring HTTPS servers](http://nginx.org/en/docs/http/configuring_https_servers.html)
