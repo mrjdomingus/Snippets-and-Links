@@ -1,7 +1,7 @@
 # How to set up nginx as reverse proxy for a nuxt app
 
 The following assumes deployment of the [next-community/express template](https://github.com/nuxt-community/express-template)
-and deployment of a containerized nginx.
+and deployment of a containerized [nginx](https://hub.docker.com/_/nginx/).
 
 ## Steps
 
