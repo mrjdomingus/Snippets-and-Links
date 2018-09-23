@@ -29,7 +29,7 @@
 * Auto Close Tag
 * REST Client (by Huachao Mao)
 * Paste JSON as Code
-* JMESPath for Visual Studio Code
+* jmespath (by jamesls)
 
 ## Gitkraken
 
