@@ -19,6 +19,7 @@
 * Vue 2 Snippets
 * Vue VSCode Snippets
 * vue-beautify
+* JavaScript (ES6) code snippets
 * Debugger for Chrome
 * ESLint
 * Docker
@@ -26,6 +27,7 @@
 * npm
 * Quokka.js
 * Auto Close Tag
+* REST Client (by Huachao Mao)
 
 ## Gitkraken
 
