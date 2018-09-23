@@ -19,7 +19,7 @@
 * Vue 2 Snippets
 * Vue VSCode Snippets
 * vue-beautify
-* JavaScript (ES6) code snippets
+* JavaScript (ES6) code snippets (by Charalampos Karypidis)
 * Debugger for Chrome
 * ESLint
 * Docker
