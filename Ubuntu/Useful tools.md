@@ -16,12 +16,16 @@
 
 ### Useful VSC extensions
 * Vetur
+* Vue 2 Snippets
+* Vue VSCode Snippets
+* vue-beautify
 * Debugger for Chrome
 * ESLint
 * Docker
 * Beautify
 * npm
 * Quokka.js
+* Auto Close Tag
 
 ## Gitkraken
 
