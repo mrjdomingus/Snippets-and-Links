@@ -21,6 +21,11 @@ During the build the custom `nginx.conf` will be imported into the image.
 Execute `docker run --network="host" nginx:custom`
 (or use "bridge", but then you will have to change `nginx.conf`)
 
+### Redirect nginx server_name to actual server
+Redirect nginx to actual server by editing `/etc/hosts` if necessary, i.e. create record like:<br>
+`127.0.0.1     mynuxt.com` 
+to redirect to localhost.
+
 ### Navigate to website
 In this example you should navigate to `http://mynuxt.com` which will be redirected to `http://172.0.0.1:3000` (the nuxt app).
 
