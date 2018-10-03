@@ -38,3 +38,6 @@
 [https://www.gitkraken.com/](https://www.gitkraken.com/)<br>
 If GitKraken does not start after install:
 * install libgnome-keyring: `sudo apt install libgnome-keyring0` (via [https://unix.stackexchange.com/questions/447589/gitkraken-does-not-start-anymore-on-ubuntu-18-04](https://unix.stackexchange.com/questions/447589/gitkraken-does-not-start-anymore-on-ubuntu-18-04))
+
+## Postman
+[https://www.ceos3c.com/open-source/install-postman-ubuntu-18-04/](https://www.ceos3c.com/open-source/install-postman-ubuntu-18-04/)
