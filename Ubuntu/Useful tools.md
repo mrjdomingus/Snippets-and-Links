@@ -41,3 +41,12 @@ If GitKraken does not start after install:
 
 ## Postman
 [https://www.ceos3c.com/open-source/install-postman-ubuntu-18-04/](https://www.ceos3c.com/open-source/install-postman-ubuntu-18-04/)
+
+## SQLite 3
+[https://www.techinfected.net/2018/01/how-to-install-sqlite3-in-ubuntu-linux-mint.html](https://www.techinfected.net/2018/01/how-to-install-sqlite3-in-ubuntu-linux-mint.html)
+
+Install by executing:<br>
+```
+sudo apt-get update
+sudo apt-get install sqlite3 libsqlite3-dev
+```
