@@ -60,4 +60,8 @@ sudo apt-get install sqlite3 libsqlite3-dev
 * [https://docs.nvidia.com/cuda/index.html](https://docs.nvidia.com/cuda/index.html)
 * [https://www.pugetsystems.com/labs/hpc/How-To-Install-CUDA-10-together-with-9-2-on-Ubuntu-18-04-with-support-for-NVIDIA-20XX-Turing-GPUs-1236/](https://www.pugetsystems.com/labs/hpc/How-To-Install-CUDA-10-together-with-9-2-on-Ubuntu-18-04-with-support-for-NVIDIA-20XX-Turing-GPUs-1236/)
 
+## NVidia-Docker
+* [https://devblogs.nvidia.com/gpu-containers-runtime/](https://devblogs.nvidia.com/gpu-containers-runtime/)
+* [https://github.com/NVIDIA/nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
+
 
