@@ -64,4 +64,20 @@ sudo apt-get install sqlite3 libsqlite3-dev
 * [https://devblogs.nvidia.com/gpu-containers-runtime/](https://devblogs.nvidia.com/gpu-containers-runtime/)
 * [https://github.com/NVIDIA/nvidia-docker](https://github.com/NVIDIA/nvidia-docker)
 
+## CUDA 10 update to TF GPU support for Linux
+Also see: [https://www.tensorflow.org/install/gpu](https://www.tensorflow.org/install/gpu)
 
+```
+# Add NVIDIA package repository
+sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/7fa2af80.pub
+wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+sudo apt install ./cuda-repo-ubuntu1804_10.0.130-1_amd64.deb
+wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1804/x86_64/nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
+sudo apt install ./nvidia-machine-learning-repo-ubuntu1804_1.0.0-1_amd64.deb
+sudo apt update
+
+# Install CUDA and tools. Include optional NCCL 2.x
+sudo apt install cuda10.0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
+    cuda-cusolver-10-0 cuda-cusparse-10-0 libcudnn7=7.4.2.24-1+cuda10.0 \
+    libnccl2=2.3.7-1+cuda10.0 cuda-command-line-tools-10-0
+```
