@@ -81,3 +81,6 @@ sudo apt install cuda10.0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
     cuda-cusolver-10-0 cuda-cusparse-10-0 libcudnn7=7.4.2.24-1+cuda10.0 \
     libnccl2=2.3.7-1+cuda10.0 cuda-command-line-tools-10-0
 ```
+
+## Installing Ubuntu 18.04 along with Windows 10 (Dual Boot Installation) for Deep Learning
+* [https://hackernoon.com/installing-ubuntu-18-04-along-with-windows-10-dual-boot-installation-for-deep-learning-f4cd91b58557](https://hackernoon.com/installing-ubuntu-18-04-along-with-windows-10-dual-boot-installation-for-deep-learning-f4cd91b58557)
