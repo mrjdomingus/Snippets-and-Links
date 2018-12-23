@@ -12,6 +12,12 @@
 
 ## Docker
 [https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
+
+To prevent the following message from Docker: _Your kernel does not support swap limit capabilities_ <br>
+Update `/etc/default/grub` and set:<br>
+`GRUB_CMDLINE_LINUX="cgroup_enable=memory swapaccount=1"` <br>
+run `update-grub` && **reboot** <br>
+
 ## Visual Studio Code for Insiders
 
 [https://code.visualstudio.com/insiders/](https://code.visualstudio.com/insiders/)
@@ -50,3 +56,8 @@ Install by executing:<br>
 sudo apt-get update
 sudo apt-get install sqlite3 libsqlite3-dev
 ```
+## CUDA Toolkit
+* [https://docs.nvidia.com/cuda/index.html](https://docs.nvidia.com/cuda/index.html)
+* [https://www.pugetsystems.com/labs/hpc/How-To-Install-CUDA-10-together-with-9-2-on-Ubuntu-18-04-with-support-for-NVIDIA-20XX-Turing-GPUs-1236/](https://www.pugetsystems.com/labs/hpc/How-To-Install-CUDA-10-together-with-9-2-on-Ubuntu-18-04-with-support-for-NVIDIA-20XX-Turing-GPUs-1236/)
+
+
