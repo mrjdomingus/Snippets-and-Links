@@ -84,3 +84,8 @@ sudo apt install cuda10.0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
 
 ## Installing Ubuntu 18.04 along with Windows 10 (Dual Boot Installation) for Deep Learning
 * [https://hackernoon.com/installing-ubuntu-18-04-along-with-windows-10-dual-boot-installation-for-deep-learning-f4cd91b58557](https://hackernoon.com/installing-ubuntu-18-04-along-with-windows-10-dual-boot-installation-for-deep-learning-f4cd91b58557)
+
+
+## xRDP
+For a script that will install xRDP to enable remote access via RDP, see here:
+* [https://github.com/mrjdomingus/Snippets-and-Links/blob/master/Ubuntu/Std-Xrdp-Install-0.2.sh](https://github.com/mrjdomingus/Snippets-and-Links/blob/master/Ubuntu/Std-Xrdp-Install-0.2.sh)
