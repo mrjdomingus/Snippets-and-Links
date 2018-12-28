@@ -13,6 +13,11 @@
 # Disclaimer : Script provided AS IS. Use it at your own risk....
 ##################################################################
 
+# Also see the following blog posts:
+# http://c-nergy.be/blog/?p=12073
+# http://c-nergy.be/blog/?p=12043
+# http://c-nergy.be/blog/?p=11868
+
 echo
 /bin/echo -e "\e[1;36m#-------------------------------------------------------------#\e[0m"
 /bin/echo -e "\e[1;36m#   Standard XRDP Installation Script  - Ver 0.2              #\e[0m"
