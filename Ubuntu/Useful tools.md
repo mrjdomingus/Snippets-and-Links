@@ -89,3 +89,6 @@ sudo apt install cuda10.0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
 ## xRDP
 For a script that will install xRDP to enable remote access via RDP, see here:
 * [https://github.com/mrjdomingus/Snippets-and-Links/blob/master/Ubuntu/Std-Xrdp-Install-0.2.sh](https://github.com/mrjdomingus/Snippets-and-Links/blob/master/Ubuntu/Std-Xrdp-Install-0.2.sh)
+
+## KeePass
+* [http://ubuntuhandbook.org/index.php/2018/09/keepass-password-safe-2-40-released-new-features/](http://ubuntuhandbook.org/index.php/2018/09/keepass-password-safe-2-40-released-new-features/)
