@@ -12,3 +12,11 @@ In summary, here is what I did that solved the issue.
 
 After reboot the Wired Ethernet performed with the expected download speed.
 
+## Switch default boot menu optie between Win10 and Ubuntu
+
+* Add Win10 as first boot menu option in GRUB
+* Add Ubuntu as second boot menu option in GRUB
+* From Win 10 or Ubuntu edit `/boot/grub/grub.cfg`
+* Change line with `set default="1"`, set default to **0** for first boot menu option, to **1** for second boot menu option.
+* Save and reboot.
+
