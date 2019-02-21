@@ -94,3 +94,7 @@ For a script that will install xRDP to enable remote access via RDP, see here:
 
 ## KeePass
 * [http://ubuntuhandbook.org/index.php/2018/09/keepass-password-safe-2-40-released-new-features/](http://ubuntuhandbook.org/index.php/2018/09/keepass-password-safe-2-40-released-new-features/)
+
+## Bookworm (e-book reader)
+
+* [https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/)
