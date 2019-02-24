@@ -40,6 +40,7 @@ run `update-grub` && **reboot** <br>
 * REST Client (by Huachao Mao)
 * Paste JSON as Code
 * jmespath (by jamesls)
+* Bracket Pair Colorizer 2
 
 ## Gitkraken
 
