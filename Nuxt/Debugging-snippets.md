@@ -8,8 +8,6 @@ Also add the following build option to the `nuxt.config.js` to have source maps 
       chunk: "[name].js"
     },
     extend(config, ctx) {
-      const path = require("path");
-      // Run ESLint on save
       if (ctx.isDev && ctx.isClient) {
         if (ctx.isDev && ctx.isClient) {
           config.devtool = "#source-map";
