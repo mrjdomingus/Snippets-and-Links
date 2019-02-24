@@ -42,6 +42,7 @@ run `update-grub` && **reboot** <br>
 * jmespath (by jamesls)
 * Bracket Pair Colorizer 2
 * Sort lines (by Daniel Imms)
+* GitLens
 
 ## Gitkraken
 
