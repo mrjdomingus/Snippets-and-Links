@@ -11,3 +11,7 @@ Good to go:<br>
 
 `ping google.com`<br><br>
 Yay!
+
+# Change network interface name ens33 back to eth0
+
+[https://www.itzgeek.com/how-tos/mini-howtos/change-default-network-name-ens33-to-old-eth0-on-ubuntu-16-04.html](https://www.itzgeek.com/how-tos/mini-howtos/change-default-network-name-ens33-to-old-eth0-on-ubuntu-16-04.html)
