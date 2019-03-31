@@ -4,8 +4,12 @@
 
 Add the following line to `/etc/network/interfaces`:<br>
 `iface ens33 inet dhcp`<br><br>
-Switch it on (enable it):<br>
 
+Add both `auto` and your `interface name` on a separate line BEFORE your interface configuration in order to bring it up at startup.<br>
+`auto ens33`<br>
+`iface ens33 inet dhcp`<br><br>
+
+Otherwise you have to switch the interface on manually:<br>
 `sudo ifup ens33` <br><br>
 Good to go:<br>
 
