@@ -101,3 +101,6 @@ For a script that will install xRDP to enable remote access via RDP, see here:
 ## Bookworm (e-book reader)
 
 * [https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/)
+
+## Azure Data Studio
+* [https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-2017](https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-2017)
