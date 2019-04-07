@@ -73,5 +73,6 @@ df.head()
 Also see: [https://docs.sqlalchemy.org/en/latest/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc](https://docs.sqlalchemy.org/en/latest/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc)
 
 ### Interesting links
+* [Connection modules for Microsoft SQL databases](https://docs.microsoft.com/en-us/sql/connect/sql-connection-libraries?view=sql-server-2017)
 * [Python SQL Driver](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server?view=sqlallproducts-allversions)
 * [Driver history for Microsoft SQL Server](https://docs.microsoft.com/en-us/sql/connect/connect-history?view=sqlallproducts-allversions)
