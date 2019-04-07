@@ -71,3 +71,7 @@ df = pd.read_sql(f"select * from master.sys.sysdatabases", conn)
 df.head()
 ```
 Also see: [https://docs.sqlalchemy.org/en/latest/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc](https://docs.sqlalchemy.org/en/latest/dialects/mssql.html#module-sqlalchemy.dialects.mssql.pyodbc)
+
+### Interesting links
+* [Python SQL Driver](https://docs.microsoft.com/en-us/sql/connect/python/python-driver-for-sql-server?view=sqlallproducts-allversions)
+* [Driver history for Microsoft SQL Server](https://docs.microsoft.com/en-us/sql/connect/connect-history?view=sqlallproducts-allversions)
