@@ -102,5 +102,8 @@ For a script that will install xRDP to enable remote access via RDP, see here:
 
 * [https://babluboy.github.io/bookworm/](https://babluboy.github.io/bookworm/)
 
+# MS SQL Server container
+* [https://hub.docker.com/_/microsoft-mssql-server](https://hub.docker.com/_/microsoft-mssql-server)
+
 ## Azure Data Studio
 * [https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-2017](https://docs.microsoft.com/en-us/sql/azure-data-studio/download?view=sql-server-2017)
