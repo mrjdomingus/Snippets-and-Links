@@ -1,4 +1,4 @@
-# Usef aliases and shell functions
+# Useful aliases and shell functions
 
 ## Show SSL certificate as text (define function in `.bashrc`)
 
