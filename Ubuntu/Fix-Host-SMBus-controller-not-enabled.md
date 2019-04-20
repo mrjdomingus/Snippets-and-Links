@@ -10,6 +10,6 @@ How to fix it:
 * `sudo nano /etc/modprobe.d/blacklist.conf`<br>
 add the line:
 * `blacklist i2c-piix4`<br>
-* After blacklisting `piix4_smbus`, run `update-initramfs -u`.
+* After blacklisting `piix4_smbus`, run `sudo update-initramfs -u`.
 * **reboot**<br>
 NOTE: for older versions use `blacklist i2c_piix4` instead.
