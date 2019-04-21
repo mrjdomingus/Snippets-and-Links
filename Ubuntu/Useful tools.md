@@ -43,6 +43,7 @@ run `update-grub` && **reboot** <br>
 * Bracket Pair Colorizer 2
 * Sort lines (by Daniel Imms)
 * GitLens
+* Todo Tree (by Gruntfugggly)
 
 ## Gitkraken
 
