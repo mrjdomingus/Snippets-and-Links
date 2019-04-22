@@ -39,3 +39,4 @@ Also see:
 * [How to Send Email Using SendGrid with Azure](https://docs.microsoft.com/en-us/azure/sendgrid-dotnet-how-to-send-email)
 * [How to redirect local root mail to an external email address on Linux](https://blog.bobbyallen.me/2013/02/03/how-to-redirect-local-root-mail-to-an-external-email-address-on-linux/)
 * [Postfix Basic Setup Howto](https://help.ubuntu.com/community/PostfixBasicSetupHowto)
+* [How to Flush Postfix Mail Queue](https://tecadmin.net/flush-postfix-mail-queue/)
