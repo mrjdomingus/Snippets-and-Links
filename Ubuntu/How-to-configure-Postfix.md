@@ -31,3 +31,4 @@ Via: [https://serverfault.com/questions/510251/postfix-gmail-authentication-requ
 Also see:
 * [How to Send an SMTP Email (via SendGrid)](https://sendgrid.com/docs/API_Reference/SMTP_API/getting_started_smtp.html)
 * [Install and configure Postfix on Ubuntu 16.04 with Sendgrid as smarthost](https://linuxmon.com/install-and-configure-postfix-on-ubuntu-1604/)
+* [Configure Postfix to Send Mail Using Gmail and Google Apps on Debian or Ubuntu](https://www.linode.com/docs/email/postfix/configure-postfix-to-send-mail-using-gmail-and-google-apps-on-debian-or-ubuntu/)
