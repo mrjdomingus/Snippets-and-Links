@@ -33,3 +33,7 @@ Also see:
 * [Install and configure Postfix on Ubuntu 16.04 with Sendgrid as smarthost](https://linuxmon.com/install-and-configure-postfix-on-ubuntu-1604/)
 * [Configure Postfix to Send Mail Using Gmail and Google Apps on Debian or Ubuntu](https://www.linode.com/docs/email/postfix/configure-postfix-to-send-mail-using-gmail-and-google-apps-on-debian-or-ubuntu/)
 * [Sending Emails With Python](https://realpython.com/python-send-email/)
+* [SendGrid API Keys](https://sendgrid.com/docs/ui/account-and-settings/api-keys/)
+* [Github repo for sendgrid-python](https://github.com/sendgrid/sendgrid-python/blob/master/sendgrid/helpers/mail/mail.py)
+* [SendGrid v3 API Python Code Example](https://sendgrid.com/docs/for-developers/sending-email/v3-python-code-example/)
+* [How to Send Email Using SendGrid with Azure](https://docs.microsoft.com/en-us/azure/sendgrid-dotnet-how-to-send-email)
