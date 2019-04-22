@@ -3,7 +3,7 @@
 Complete these steps as **root**.
 
 1. `sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules`<br>
-Note: Choose "internet site" and other default options if promted with questions in terminal.<br> Run `sudo dpkg-reconfigure postfix` if you need to reconfigure postfix over.
+Note: Choose "Internet site" and other default options if prompted with questions in terminal.<br> Run `sudo dpkg-reconfigure postfix` if you need to reconfigure postfix over.
 2. Create your password file with `sudo nano /etc/postfix/sasl_passwd` 
 3. Populate the password file. Example: `[smtp.gmail.com]:587 myusername@gmail.com:mypassword`
 4. Secure the file by running `sudo chmod 600 /etc/postfix/sasl_passwd`<br>
