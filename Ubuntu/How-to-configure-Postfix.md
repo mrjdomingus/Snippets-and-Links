@@ -40,3 +40,5 @@ Also see:
 * [How to redirect local root mail to an external email address on Linux](https://blog.bobbyallen.me/2013/02/03/how-to-redirect-local-root-mail-to-an-external-email-address-on-linux/)
 * [Postfix Basic Setup Howto](https://help.ubuntu.com/community/PostfixBasicSetupHowto)
 * [How to Flush Postfix Mail Queue](https://tecadmin.net/flush-postfix-mail-queue/)
+* [How to configure Postfix relayhost (smarthost) to send eMail using an external smptd](https://www.cyberciti.biz/faq/how-to-configure-postfix-relayhost-smarthost-to-send-email-using-an-external-smptd/)
+
