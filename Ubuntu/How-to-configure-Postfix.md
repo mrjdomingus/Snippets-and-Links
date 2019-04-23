@@ -3,7 +3,19 @@
 Complete these steps as **root**.
 
 1. `sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules`<br>
-Note: Choose "Internet site" and other default options if prompted with questions in terminal.<br> Run `sudo dpkg-reconfigure postfix` if you need to reconfigure postfix over.
+Note: Choose "Internet Site" and other default options if prompted with questions in terminal.<br> Run `sudo dpkg-reconfigure postfix` if you need to reconfigure postfix over.
+2. **Replace** the contents of the Postfix config file by running `sudo nano /etc/postfix/main.cf` and replace entirely with the content of [Working-sample-of-Postfix-main.cf](https://raw.githubusercontent.com/mrjdomingus/Snippets-and-Links/master/Ubuntu/Working-sample-of-Postfix-main.cf)
+3. Restart Postfix service by running `sudo systemctl restart postfix.service`
+4. Verify that TCP port #25 is in listing state on 127.0.0.1: `netstat -tulpn | grep :25`
+5. Replace `you@example.com` with your email adddress in the following code and test sending mail:<br>
+`echo "Test mail from postfix" | mail -s "Test Postfix" you@example.com`
+6. Verify that email has been sent or not using your own log file: `sudo tail -f /var/log/mail.log` OR by running `sudo journalctl -u postfix`.
+
+
+The above supersedes the lesser alternative below.
+
+1. `sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules`<br>
+Note: Choose "Internet Site" and other default options if prompted with questions in terminal.<br> Run `sudo dpkg-reconfigure postfix` if you need to reconfigure postfix over.
 2. Create your password file with `sudo nano /etc/postfix/sasl_passwd` 
 3. Populate the password file. Example: `[smtp.gmail.com]:587 myusername@gmail.com:mypassword`
 4. Secure the file by running `sudo chmod 600 /etc/postfix/sasl_passwd`<br>
@@ -19,7 +31,7 @@ smtp_tls_CAfile = /etc/ssl/certs/ca-certificates.crt
 ```
 7. Encode password file by running `sudo postmap /etc/postfix/sasl_passwd`
 
-8. Restart postfix service by running `sudo systemctl restart postfix.service`
+8. Restart the Postfix service by running `sudo systemctl restart postfix.service`
 
 9. Replace `you@example.com` with your email adddress in the following code and test sending mail:<br>
 `echo "Test mail from postfix" | mail -s "Test Postfix" you@example.com`
