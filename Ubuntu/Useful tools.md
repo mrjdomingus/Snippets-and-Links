@@ -44,6 +44,7 @@ run `update-grub` && **reboot** <br>
 * Sort lines (by Daniel Imms)
 * GitLens
 * Todo Tree (by Gruntfugggly)
+* DotENV (by mikestead)
 
 ## Gitkraken
 
