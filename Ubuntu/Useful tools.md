@@ -46,6 +46,8 @@ run `update-grub` && **reboot** <br>
 * Todo Tree (by Gruntfugggly)
 * DotENV (by mikestead)
 
+* [Fira Code Font](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
+
 ## Gitkraken
 
 [https://www.gitkraken.com/](https://www.gitkraken.com/)<br>
