@@ -12,7 +12,7 @@ Also see: [https://web.archive.org/web/20180901124519/http://www.diveintopython.
 
 Also see [https://nbconvert.readthedocs.io/en/latest/usage.html](https://nbconvert.readthedocs.io/en/latest/usage.html)
 
-### CUDA wrapper for cudf apply_chunks function
+### CUDA wrapper for cudf _apply_chunks_ function
 
 A call of apply_chunks like this...
 ```
