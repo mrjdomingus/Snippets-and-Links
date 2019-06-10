@@ -11,3 +11,35 @@ Also see: [https://web.archive.org/web/20180901124519/http://www.diveintopython.
 `jupyter nbconvert --to script notebook.ipynb`
 
 Also see [https://nbconvert.readthedocs.io/en/latest/usage.html](https://nbconvert.readthedocs.io/en/latest/usage.html)
+
+### CUDA wrapper for cudf apply_chunks function
+
+A call of apply_chunks like this...
+```
+groups.apply_chunks(grpfunc,
+  incols=['in1', 'in2'],
+  outcols={'out1': np.float64, 'out2': np.float64},
+  kwargs={},
+  chunks=df_groups[1],
+  # threads per block
+  tpb=1)
+```
+will generate below wrapper:
+
+```
+def chunk_wise_kernel(nrows, chunks, __user_in1, __user_in2, __user_out1, __user_out2):
+    blkid = cuda.blockIdx.x
+    nblkid = cuda.gridDim.x
+    tid = cuda.threadIdx.x
+    ntid = cuda.blockDim.x
+    for curblk in range(blkid, chunks.size, nblkid):
+        start = chunks[curblk]
+        stop = chunks[curblk + 1] if curblk + 1 < chunks.size else nrows
+        inner(__user_in1[start:stop], __user_in2[start:stop], __user_out1[start:stop],
+              __user_out2[start:stop])
+```
+where the Python function signature is:
+```
+def func(EUR, MinimumValue, UpperBound, StartValue):
+```
+The Python function will be called via proxy function `inner` by the wrapper.
