@@ -40,6 +40,6 @@ def chunk_wise_kernel(nrows, chunks, __user_in1, __user_in2, __user_out1, __user
 ```
 where the Python function signature is:
 ```
-def func(EUR, MinimumValue, UpperBound, StartValue):
+def func(in1, in2, out1, out2):
 ```
 The Python function will be called via proxy function `inner` by the wrapper.
