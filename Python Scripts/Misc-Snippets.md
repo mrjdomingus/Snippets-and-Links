@@ -43,3 +43,18 @@ where the Python function signature is:
 def func(in1, in2, out1, out2):
 ```
 The Python function will be called via proxy function `inner` by the wrapper.
+
+### List of dictionaries (LD) to dictionary of lists (DL) and vice versa
+
+Via [https://stackoverflow.com/questions/5558418/list-of-dicts-to-from-dict-of-lists](https://stackoverflow.com/questions/5558418/list-of-dicts-to-from-dict-of-lists)
+
+Here is DL to LD:
+```
+v = [dict(zip(DL,t)) for t in zip(*DL.values())]
+print(v)
+```
+and LD to DL:
+```
+v = {k: [dic[k] for dic in LD] for k in LD[0]}
+print(v)
+```
