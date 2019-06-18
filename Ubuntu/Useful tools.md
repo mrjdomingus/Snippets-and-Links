@@ -45,6 +45,7 @@ run `update-grub` && **reboot** <br>
 * GitLens
 * Todo Tree (by Gruntfugggly)
 * DotENV (by mikestead)
+* Excel Viewer
 
 * [Fira Code Font](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
 
