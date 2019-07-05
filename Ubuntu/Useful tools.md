@@ -46,6 +46,7 @@ run `update-grub` && **reboot** <br>
 * Todo Tree (by Gruntfugggly)
 * DotENV (by mikestead)
 * Excel Viewer
+* ExpressJs 4 Snippets (by Güray Yarar)
 
 * [Fira Code Font](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
 
