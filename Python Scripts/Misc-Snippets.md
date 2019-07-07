@@ -1,6 +1,6 @@
 ### Retrieve methods of an object
 
-To retriev all methods of an object you can use this code, replacing 'object' with the object you're interested in:
+To retrieve all methods of an object you can use this code, replacing 'object' with the object you're interested in:
 ```
 object_methods = [method_name for method_name in dir(object) if callable(getattr(object, method_name))]
 print(object_methods)
@@ -58,3 +58,8 @@ and LD to DL:
 v = {k: [dic[k] for dic in LD] for k in LD[0]}
 print(v)
 ```
+### Step into user-defined and pip-installed modules while debugging
+
+To step into user-defined and pip-installed modules, add `"justMyCode": false` to `launch.json`.<br>
+This option now supersedes `"debugStdLib": true` which superseded `"debugOptions": ["DebugStdLib"]`.
+
