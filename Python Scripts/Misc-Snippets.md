@@ -63,3 +63,13 @@ print(v)
 To step into user-defined and pip-installed modules, add `"justMyCode": false` to `launch.json`.<br>
 This option now supersedes `"debugStdLib": true` which superseded `"debugOptions": ["DebugStdLib"]`.
 
+### Split list into n sublists
+```
+def split_list_in_n_sublists(list, n):
+    n = min(n, len(list)) # don't create empty buckets
+    k, m = divmod(len(list), n)
+    return (list[i * k + min(i, m):(i + 1) * k + min(i + 1, m)] for i in range(n))
+    
+list(split_list_in_n_sublists([3,5,2,1,7,6,9,4,0,8], 3))
+# [[3, 5, 2, 1], [7, 6, 9], [4, 0, 8]]
+```
