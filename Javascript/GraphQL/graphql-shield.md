@@ -1,7 +1,9 @@
 # How to use graphql-shield
 
 ```js
-const { ApolloServer, gql } = require("apollo-server");
+const express = require('express');
+const { ApolloServer, gql } = require("apollo-server-express");
+const app = express();
 const { shield, rule, allow, deny, and } = require("graphql-shield");
 const { applyMiddleware } = require("graphql-middleware");
 const { makeExecutableSchema } = require("graphql-tools");
@@ -89,13 +91,18 @@ const server = new ApolloServer({
   context: ({ req }) => {
     return {
       // mocking that there is no user currently in the context
-      user: {}
+      user: { name: 'Marcel', role: ADMIN_ROLE }
     };
   }
 });
 
-server.listen().then(({ url }) => {
-  console.log(`🚀 Server ready at ${url}`);
-});
+server.applyMiddleware({ app });
 
+app.get('/', function (req, res) {
+  res.send('hello world')
+})
+
+app.listen({ port: 4000 }, () => {
+  console.log(`🚀 Server ready at http://localhost:4000${server.graphqlPath}`);
+});
 ```
