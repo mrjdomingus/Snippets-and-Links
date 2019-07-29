@@ -51,7 +51,7 @@ For server-side debug adjust the following:
 "devdebug": "cross-env NODE_ENV=development /home/marcel/.nvm/versions/node/v8.16.0/bin/node --inspect=9229 server/index.js",
 ```
 
-** Below is more or less superseded by above **
+**Below is more or less superseded by above**
 ## How to debug code running in Google Chrome from VS Code
 [https://github.com/Microsoft/vscode-chrome-debug](https://github.com/Microsoft/vscode-chrome-debug)
 
