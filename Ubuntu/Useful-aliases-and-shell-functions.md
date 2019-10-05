@@ -16,3 +16,15 @@ Also see: [https://www.sslshopper.com/article-most-common-openssl-commands.html]
 
 ## Start SQL Server docker container
 `function start_sql() { docker run --rm -v $HOME/sqldata:/var/opt/mssql/data -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-latest-ubuntu; }`
+
+## Access Python 3 by default
+```
+alias pip='pip3.x'
+alias python='python3.x'
+```
+or
+```
+alias pip='pip3'
+alias python='python3'
+```
+
