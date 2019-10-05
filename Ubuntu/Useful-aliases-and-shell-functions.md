@@ -28,4 +28,6 @@ alias pip='pip3'
 alias python='python3'
 ```
 or
-`update-alternatives --install /usr/bin/python python /usr/bin/python3 10`  
+```
+update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+```  
