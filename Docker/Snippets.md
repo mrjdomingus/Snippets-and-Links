@@ -12,7 +12,7 @@ Add them to a new configuration file called `daemon.json`:
 And insert the following:
 ```
 {
-    "dns": ["8.8.8.8"]
+    "dns": ["8.8.8.8", "10.91.3.31"]
 }
 ```
 Then restart the service:
