@@ -49,7 +49,7 @@ The npm install .staging issue: when you run npm install, it creates the node_mo
 
 Try to solve it by installing the latest version of `npm` and performing a thorough cleanup:
 ```
-npm install npm@latest -g
+sudo npm install npm@latest -g
 npm cache clean --force
 rm -rf ~/.npm
 rm -rf node_modules
