@@ -44,3 +44,14 @@
   },
 }
 ```
+## npm install .staging issue
+The npm install .staging issue: when you run npm install, it creates the node_modules folder but all the modules go into a subfolder called .staging.
+
+Try to solve it by installing the latest version of `npm` and performing a thorough cleanup:
+```
+npm install npm@latest -g
+npm cache clean --force
+rm -rf ~/.npm
+rm -rf node_modules
+rm -f package-lock.json
+```
