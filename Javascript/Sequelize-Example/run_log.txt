@@ -1,0 +1,124 @@
+marcel@ubuntu:~/tmp/mdtest$ node server.js
+before main
+Authentication check...
+Executing (default): SELECT 1+1 AS result
+Connection has been established successfully.
+sync the models...
+Executing (default): IF OBJECT_ID('[users]', 'U') IS NULL CREATE TABLE [users] ([id] INTEGER NOT NULL IDENTITY(1,1) , [firstName] NVARCHAR(255) NOT NULL, [lastName] NVARCHAR(255) NOT NULL, [email] NVARCHAR(255) NOT NULL UNIQUE, [createdAt] DATETIMEOFFSET NOT NULL, [updatedAt] DATETIMEOFFSET NOT NULL, PRIMARY KEY ([id]));
+Executing (default): EXEC sys.sp_helpindex @objname = N'[users]';
+Executing (default): IF OBJECT_ID('[posts]', 'U') IS NULL CREATE TABLE [posts] ([id] INTEGER NOT NULL IDENTITY(1,1) , [title] NVARCHAR(255) NOT NULL, [content] NVARCHAR(MAX) NULL, [createdAt] DATETIMEOFFSET NOT NULL, [updatedAt] DATETIMEOFFSET NOT NULL, [authorId] INTEGER NULL, PRIMARY KEY ([id]), FOREIGN KEY ([authorId]) REFERENCES [users] ([id]) ON DELETE SET NULL);
+Executing (default): EXEC sys.sp_helpindex @objname = N'[posts]';
+Executing (default): IF OBJECT_ID('[tags]', 'U') IS NULL CREATE TABLE [tags] ([id] INTEGER NOT NULL IDENTITY(1,1) , [name] NVARCHAR(255) NOT NULL, [createdAt] DATETIMEOFFSET NOT NULL, [updatedAt] DATETIMEOFFSET NOT NULL, PRIMARY KEY ([id]));
+Executing (default): EXEC sys.sp_helpindex @objname = N'[tags]';
+MSSQL does not support self referencial constraints, we will remove it but we recommend restructuring your query
+Executing (default): IF OBJECT_ID('[comments]', 'U') IS NULL CREATE TABLE [comments] ([id] INTEGER NOT NULL IDENTITY(1,1) , [content] NVARCHAR(MAX) NOT NULL, [createdAt] DATETIMEOFFSET NOT NULL, [updatedAt] DATETIMEOFFSET NOT NULL, [postId] INTEGER NULL, [authorId] INTEGER NULL, [parentId] INTEGER NULL, PRIMARY KEY ([id]), FOREIGN KEY ([postId]) REFERENCES [posts] ([id]) ON DELETE SET NULL, FOREIGN KEY ([authorId]) REFERENCES [users] ([id]) ON DELETE SET NULL, FOREIGN KEY ([parentId]) REFERENCES [comments] ([id]));
+Executing (default): EXEC sys.sp_helpindex @objname = N'[comments]';
+Executing (default): IF OBJECT_ID('[postTags]', 'U') IS NULL CREATE TABLE [postTags] ([createdAt] DATETIMEOFFSET NOT NULL, [updatedAt] DATETIMEOFFSET NOT NULL, [postId] INTEGER , [tagId] INTEGER , PRIMARY KEY ([postId], [tagId]), FOREIGN KEY ([postId]) REFERENCES [posts] ([id]) ON DELETE CASCADE, FOREIGN KEY ([tagId]) REFERENCES [tags] ([id]) ON DELETE CASCADE);
+Executing (default): EXEC sys.sp_helpindex @objname = N'[postTags]';
+Succesfully synced the models to the database.
+Create user...
+Executing (7252d61e55f01baa506e): BEGIN TRANSACTION;
+Executing (7252d61e55f01baa506e): SELECT [id], [firstName], [lastName], [email], [createdAt], [updatedAt] FROM [users] AS [user] WHERE [user].[firstName] = N'Donald' AND [user].[lastName] = N'Duck' ORDER BY [user].[id] OFFSET 0 ROWS FETCH NEXT 1 ROWS ONLY;
+Executing (7252d61e55f01baa506e): INSERT INTO [users] ([firstName],[lastName],[email],[createdAt],[updatedAt]) OUTPUT INSERTED.* VALUES (@0,@1,@2,@3,@4);
+Executing (7252d61e55f01baa506e): COMMIT TRANSACTION;
+{ id: 2,
+  firstName: 'Donald',
+  lastName: 'Duck',
+  email: 'dduck@somewhere.com',
+  updatedAt: 2019-12-25T10:58:47.708Z,
+  createdAt: 2019-12-25T10:58:47.708Z }
+created: true
+Find all users...
+Executing (default): SELECT [id], [firstName], [lastName], [email], [createdAt], [updatedAt] FROM [users] AS [user];
+user {
+  dataValues:
+   { id: 2,
+     firstName: 'Donald',
+     lastName: 'Duck',
+     email: 'dduck@somewhere.com',
+     createdAt: 2019-12-25T10:58:47.708Z,
+     updatedAt: 2019-12-25T10:58:47.708Z },
+  _previousDataValues:
+   { id: 2,
+     firstName: 'Donald',
+     lastName: 'Duck',
+     email: 'dduck@somewhere.com',
+     createdAt: 2019-12-25T10:58:47.708Z,
+     updatedAt: 2019-12-25T10:58:47.708Z },
+  _changed: {},
+  _modelOptions:
+   { timestamps: true,
+     validate: {},
+     freezeTableName: false,
+     underscored: false,
+     paranoid: false,
+     rejectOnEmpty: false,
+     whereCollection: null,
+     schema: null,
+     schemaDelimiter: '',
+     defaultScope: {},
+     scopes: {},
+     indexes: [],
+     name: { plural: 'users', singular: 'user' },
+     omitNull: false,
+     sequelize:
+      Sequelize {
+        options: [Object],
+        config: [Object],
+        dialect: [MssqlDialect],
+        queryInterface: [QueryInterface],
+        models: [Object],
+        modelManager: [ModelManager],
+        connectionManager: [ConnectionManager],
+        importCache: {} },
+     hooks: {} },
+  _options:
+   { isNewRecord: false,
+     _schema: null,
+     _schemaDelimiter: '',
+     raw: true,
+     attributes:
+      [ 'id', 'firstName', 'lastName', 'email', 'createdAt', 'updatedAt' ] },
+  isNewRecord: false } 0 [ user {
+    dataValues:
+     { id: 2,
+       firstName: 'Donald',
+       lastName: 'Duck',
+       email: 'dduck@somewhere.com',
+       createdAt: 2019-12-25T10:58:47.708Z,
+       updatedAt: 2019-12-25T10:58:47.708Z },
+    _previousDataValues:
+     { id: 2,
+       firstName: 'Donald',
+       lastName: 'Duck',
+       email: 'dduck@somewhere.com',
+       createdAt: 2019-12-25T10:58:47.708Z,
+       updatedAt: 2019-12-25T10:58:47.708Z },
+    _changed: {},
+    _modelOptions:
+     { timestamps: true,
+       validate: {},
+       freezeTableName: false,
+       underscored: false,
+       paranoid: false,
+       rejectOnEmpty: false,
+       whereCollection: null,
+       schema: null,
+       schemaDelimiter: '',
+       defaultScope: {},
+       scopes: {},
+       indexes: [],
+       name: [Object],
+       omitNull: false,
+       sequelize: [Sequelize],
+       hooks: {} },
+    _options:
+     { isNewRecord: false,
+       _schema: null,
+       _schemaDelimiter: '',
+       raw: true,
+       attributes: [Array] },
+    isNewRecord: false } ]
+Clean up after ourselves...
+after main
+marcel@ubuntu:~/tmp/mdtest$ 
