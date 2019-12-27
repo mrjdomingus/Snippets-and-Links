@@ -76,6 +76,15 @@ async function main() {
   console.log('after main');
 })();
 
+/*
+// Alternative starter
+main()
+  .then(() => {
+    process.exit(0)
+  })
+  .catch(e => console.error(e))
+*/
+
 /* 
 Clean up sequence:
 DROP TABLE comments
