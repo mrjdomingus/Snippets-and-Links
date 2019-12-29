@@ -1,8 +1,15 @@
 import * as express from 'express'
+// See https://github.com/expressjs/compression
+import * as compression from 'compression'
+// See https://github.com/expressjs/morgan
+import * as morgan from 'morgan'
+// See https://expressjs.com/en/advanced/best-practice-security.html#use-helmet
+import * as helmet from 'helmet'
 import { Server, AddressInfo } from 'net'
 import { ApolloServer } from 'apollo-server-express'
 import { idArg, queryType, stringArg } from 'nexus'
 import { makePrismaSchema, prismaObjectType } from 'nexus-prisma'
+import * as fs from 'fs'
 import * as path from 'path'
 import datamodelInfo from './generated/nexus-prisma'
 import { prisma } from './generated/prisma-client'
@@ -171,6 +178,13 @@ const server = new ApolloServer({
 })
 
 const app = express();
+app.use(compression())
+
+// create a write stream (in append mode)
+var accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' })
+app.use(morgan('combined', { stream: accessLogStream }))
+
+app.use(helmet())
 
 server.applyMiddleware({ app });
 
