@@ -1,6 +1,6 @@
 # GraphQL Server Example
 
-This example shows how to implement a **GraphQL server with TypeScript** based on Prisma, [graphql-yoga](https://github.com/prisma/graphql-yoga) and [GraphQL Nexus](https://graphql-nexus.com/).
+This example shows how to implement a **GraphQL server with TypeScript** based on Prisma, [apollo-server-express](https://github.com/apollographql/apollo-server/tree/master/packages/apollo-server-express) and [GraphQL Nexus](https://graphql-nexus.com/).
 
 ## How to use
 
@@ -9,13 +9,13 @@ This example shows how to implement a **GraphQL server with TypeScript** based o
 Clone the repository:
 
 ```
-git clone git@github.com:prisma/prisma-examples.git
+git clone https://github.com/mrjdomingus/Snippets-and-Links.git
 ```
 
 Install Node dependencies:
 
 ```
-cd prisma-examples/typescript/graphql
+cd Snippets-and-Links/Javascript/Nexus-Prisma-Example
 npm install
 ```
 
@@ -29,57 +29,17 @@ npm install -g prisma
 
 ### 3. Set up database & deploy Prisma datamodel
 
-For this example, you'll use a free _demo database_ (AWS Aurora) hosted in Prisma Cloud. To set up your database, run:
-
-```
-prisma deploy
-```
-
-Then, follow these steps in the interactive CLI wizard:
-
-1. Select **Demo server**
-1. **Authenticate** with Prisma Cloud in your browser (if necessary)
-1. Back in your terminal, **confirm all suggested values**
-
-<details>
- <summary>Alternative: Run Prisma locally via Docker</summary>
+Run Prisma locally via Docker:
 
 1. Ensure you have Docker installed on your machine. If not, you can get it from [here](https://store.docker.com/search?offering=community&type=edition).
-1. Create `docker-compose.yml` for MySQL (see [here](https://www.prisma.io/docs/prisma-server/database-connector-POSTGRES-jgfr/) for Postgres):
-    ```yml
-    version: '3'
-    services:
-      prisma:
-        image: prismagraphql/prisma:1.27
-        restart: always
-        ports:
-        - "4466:4466"
-        environment:
-          PRISMA_CONFIG: |
-            port: 4466
-            databases:
-              default:
-                connector: mysql
-                host: mysql
-                port: 3306
-                user: root
-                password: prisma
-                migrations: true
-      mysql:
-        image: mysql:5.7
-        restart: always
-        environment:
-          MYSQL_ROOT_PASSWORD: prisma
-        volumes:
-          - mysql:/var/lib/mysql
-    volumes:
-      mysql:
-    ```
-1. Run `docker-compose up -d`
-1. Set the `endpoint` in `prisma.yml` to `http://localhost:4466`
-1. Run `prisma deploy`
-
-</details>
+1. Run `docker-compose up -d` to start Prisma server and Postgres server
+1. Set environment variable: `export PRISMA_MANAGEMENT_API_SECRET="mysecret42"`
+1. Optionally set environment variable: `export DEBUG=*`
+1. Run below for initial deployment of database:
+```
+cd prisma
+prisma deploy
+```
 
 ### 4. Start the GraphQL server
 
@@ -89,7 +49,7 @@ Launch your GraphQL server with this command:
 npm run start
 ```
 
-Navigate to [http://localhost:4000](http://localhost:4000) in your browser to explore the API of your GraphQL server in a [GraphQL Playground](https://github.com/prisma/graphql-playground).
+Navigate to [http://localhost:83383/graphql](http://localhost:83383/graphql) in your browser to explore the API of your GraphQL server in a [GraphQL Playground](https://github.com/prisma/graphql-playground).
 
 ### 5. Using the GraphQL API
 
