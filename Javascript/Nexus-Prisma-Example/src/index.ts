@@ -1,3 +1,4 @@
+import * as http from 'http';
 import * as express from 'express'
 // See https://github.com/expressjs/compression
 import * as compression from 'compression'
@@ -172,9 +173,13 @@ const schema = makePrismaSchema({
   },
 })
 
+const enable_tracing = process.env.ENABLE_GRAPHQL_TRACING || false
 const server = new ApolloServer({
   schema,
   context: { prisma },
+  introspection: true,
+  playground: true,
+  tracing: enable_tracing
 })
 
 const app = express();
@@ -186,10 +191,15 @@ app.use(morgan('combined', { stream: accessLogStream }))
 
 app.use(helmet())
 
-server.applyMiddleware({ app });
+server.applyMiddleware({ app, path: '/graphql' });
+
+const httpServer = http.createServer(app);
+server.installSubscriptionHandlers(httpServer);
 
 const port: string | number = process.env.GRAPHQL_PORT || 8383
 const host: string = process.env.GRAPHQL_HOST || '0.0.0.0'
-const listener: Server = app.listen({ port: port, host: host }, () =>
-  console.log(`🚀 GraphQL server ready at http://${(listener.address() as AddressInfo).address}:${(listener.address() as AddressInfo).port}${server.graphqlPath}`)
-);
+// ⚠️ Pay attention to the fact that we are calling `listen` on the http server variable, and not on `app`.
+httpServer.listen({port: port, host: host} , () => {
+  console.log(`🚀 Server ready at http://localhost:${port}${server.graphqlPath}`)
+  console.log(`🚀 Subscriptions ready at ws://localhost:${port}${server.subscriptionsPath}`)
+})
