@@ -11,6 +11,6 @@
   "dependencies": {
     "async": "^2.6.0",
     "kbpgp": "^2.0.76",
-    "openpgp": "^2.6.2"
+    "openpgp": "^4.3.0"
   }
 }
