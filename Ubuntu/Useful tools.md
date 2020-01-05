@@ -34,6 +34,7 @@ run `update-grub` && **reboot** <br>
 * ESLint
 * Docker
 * Beautify
+* vscode-icons
 * npm
 * Quokka.js
 * Auto Close Tag
