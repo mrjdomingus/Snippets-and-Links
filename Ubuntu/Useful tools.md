@@ -117,3 +117,31 @@ For a script that will install xRDP to enable remote access via RDP, see here:
 
 ## NoSQLBooster
 * [https://www.nosqlbooster.com/downloads](https://www.nosqlbooster.com/downloads)
+
+# How to install ip and ping command
+```
+sudo apt-get update && \
+sudo apt-get install -y iproute2 && \
+sudo apt-get install -y iputils-ping
+```
+
+or
+
+```
+apt-get update && \
+apt-get install -y iproute2 && \
+apt-get install -y iputils-ping
+```
+
+# Aliveness check for Redis using netcat
+`(printf "PING\r\n";) | nc redis_c3 6379` # redis_c3 is hostname of Redis server
+
+# Defreitas DNS proxy
+See [http://mageddo.github.io/dns-proxy-server/latest/en/](http://mageddo.github.io/dns-proxy-server/latest/en/)
+
+# apt-file Wiki
+See [https://wiki.debian.org/apt-file](https://wiki.debian.org/apt-file)
+Example how to search for ip-utility: `apt-file search --regexp 'bin/ip$'`
+
+# Container discovery when using Docker Swarm
+Run DNS lookup (within running container) for tasks.service name i.e. `nslookup tasks.c3_redis_c3` 
