@@ -136,11 +136,11 @@ apt-get install -y iputils-ping
 # Aliveness check for Redis using netcat
 `(printf "PING\r\n";) | nc redis_c3 6379` # redis_c3 is hostname of Redis server
 
-# Defreitas DNS proxy
+# Defreitas Docker DNS proxy
 See [http://mageddo.github.io/dns-proxy-server/latest/en/](http://mageddo.github.io/dns-proxy-server/latest/en/)
 
 # apt-file Wiki
-See [https://wiki.debian.org/apt-file](https://wiki.debian.org/apt-file)
+See [https://wiki.debian.org/apt-file](https://wiki.debian.org/apt-file)<br>
 Example how to search for ip-utility: `apt-file search --regexp 'bin/ip$'`
 
 # Container discovery when using Docker Swarm
