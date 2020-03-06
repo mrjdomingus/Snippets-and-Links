@@ -48,6 +48,7 @@ run `update-grub` && **reboot** <br>
 * DotENV (by mikestead)
 * Excel Viewer
 * ExpressJs 4 Snippets (by Güray Yarar)
+* Indented Block Highlighting
 
 * [Fira Code Font](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
 
