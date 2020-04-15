@@ -52,6 +52,10 @@ run `update-grub` && **reboot** <br>
 
 * [Fira Code Font](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
 
+### Note 1
+Set below setting to prevent locks when updating VS Code (on Windows)<br>
+```"update.enableWindowsBackgroundUpdates": false```
+
 ## Gitkraken
 
 [https://www.gitkraken.com/](https://www.gitkraken.com/)<br>
