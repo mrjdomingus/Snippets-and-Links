@@ -108,6 +108,7 @@ sudo apt install cuda10.0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
 
 ## xRDP
 For a script that will install xRDP to enable remote access via RDP, see here:
+* [How to Install Xrdp Server (Remote Desktop) on Ubuntu 20.04](https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/)
 * [https://github.com/mrjdomingus/Snippets-and-Links/blob/master/Ubuntu/xrdp-installer-1.1.sh](https://github.com/mrjdomingus/Snippets-and-Links/blob/master/Ubuntu/xrdp-installer-1.1.sh)
 
 ## KeePass
