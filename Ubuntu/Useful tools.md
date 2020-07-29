@@ -53,6 +53,7 @@ run `update-grub` && **reboot** <br>
 * Pylance
 
 * [Fira Code Font](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
+* Ligatures Limited
 
 ### Note 1
 Set below setting to prevent locks when updating VS Code (on Windows)<br>
