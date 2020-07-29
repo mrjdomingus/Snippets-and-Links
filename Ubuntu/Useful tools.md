@@ -166,4 +166,6 @@ docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /va
 You'll just need to access the port **9000** of the Docker engine where portainer is running using your browser.<br><br>
 _Note: Port 9000 is the general port used by Portainer for the UI access. Port 8000 is used exclusively by the EDGE agent for the reverse tunnel function. If you do not plan to use the edge agent, you do not need to expose port 8000_<br>
 
+# Swap info
+* [SwapFaq](https://help.ubuntu.com/community/SwapFaq)
 
