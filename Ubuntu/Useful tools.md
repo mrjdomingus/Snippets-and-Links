@@ -110,6 +110,7 @@ sudo apt install cuda10.0 cuda-cublas-10-0 cuda-cufft-10-0 cuda-curand-10-0 \
 For a script that will install xRDP to enable remote access via RDP, see here:
 * [How to Install Xrdp Server (Remote Desktop) on Ubuntu 20.04](https://linuxize.com/post/how-to-install-xrdp-on-ubuntu-20-04/)
 * [xRDP – The Infamous “Authentication Required to Create Managed Color Device” Explained](https://c-nergy.be/blog/?p=12073)
+* [xRDP – Infamous “Authentication required to refresh system repositories” popup on Ubuntu 19.04 – The correct fix !!](https://c-nergy.be/blog/?p=14051)
 * [https://github.com/mrjdomingus/Snippets-and-Links/blob/master/Ubuntu/xrdp-installer-1.1.sh](https://github.com/mrjdomingus/Snippets-and-Links/blob/master/Ubuntu/xrdp-installer-1.1.sh)
 
 ## KeePass
