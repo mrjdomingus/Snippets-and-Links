@@ -51,6 +51,7 @@ run `update-grub` && **reboot** <br>
 * Indented Block Highlighting
 * Python Docstring Generator
 * Pylance
+* Trailing Spaces (by Shardul Mahadik)
 
 * [Fira Code Font](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
 * Ligatures Limited
