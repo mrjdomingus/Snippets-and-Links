@@ -88,31 +88,7 @@ storageAccountKey=$(az storage account keys list \
     --query "[0].value" | tr -d '"')
 echo "storageAccountKey=$storageAccountKey"
 
-# Create a persistent mount point for the Azure file share with /etc/fstab
-echo "Create a persistent mount point for the Azure file share with /etc/fstab"
+MOUNT_OPTIONS="vers=3.0,username=$storageAccountName,password=$storageAccountKey,uid=${LOCAL_UID},gid=${LOCAL_GID},file_mode=${FILEMODE},dir_mode=${DIRMODE},serverino"
+echo "MOUNT_OPTIONS=$MOUNT_OPTIONS"
 
-if [ ! -d "/etc/smbcredentials" ]; then
-    sudo mkdir "/etc/smbcredentials"
-fi
-
-smbCredentialFile="/etc/smbcredentials/$storageAccountName.cred"
-if [ ! -f $smbCredentialFile ]; then
-    echo "username=$storageAccountName" | sudo tee $smbCredentialFile > /dev/null
-    echo "password=$storageAccountKey" | sudo tee -a $smbCredentialFile > /dev/null
-else 
-    echo "The credential file $smbCredentialFile already exists, and was not modified."
-fi
-
-sudo chmod 600 $smbCredentialFile
-
-smbPath=$(echo $httpEndpoint | cut -c7-$(expr length $httpEndpoint))$fileShareName
-
-MOUNT_OPTIONS="vers=3.0,credentials=${smbCredentialFile},uid=${LOCAL_UID},gid=${LOCAL_GID},file_mode=${FILEMODE},dir_mode=${DIRMODE},serverino"
-
-if [ -z "$(grep $smbPath\ $mntPath /etc/fstab)" ]; then
-    echo "$smbPath $mntPath cifs nofail,$MOUNT_OPTIONS" | sudo tee -a /etc/fstab > /dev/null
-else
-    echo "/etc/fstab was not modified to avoid conflicting entries as this Azure file share was already present. You may want to double check /etc/fstab to ensure the configuration is as desired."
-fi
-
-sudo mount -a
+sudo mount -t cifs $smbPath $mntPath -o $MOUNT_OPTIONS
