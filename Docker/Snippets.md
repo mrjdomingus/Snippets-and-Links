@@ -17,3 +17,6 @@ And insert the following:
 ```
 Then restart the service:
 `sudo service docker restart`
+
+# Restart docker after VM sleep
+docker stop $(docker ps -aq) && sudo systemctl restart NetworkManager docker
