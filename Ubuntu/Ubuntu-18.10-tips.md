@@ -17,3 +17,8 @@ sudo service open-vm-tools restart
 ```
 ## How to install the NVIDIA drivers on Ubuntu 18.04 Bionic Beaver Linux
 [https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux)
+
+## How to solve double-click does not Open Folder in Nautilus or VS Code
+* Open **Settings** and click on the left tab **Universal Access**.
+* In the bottom you will find **Double-Click Delay**
+* If slider on zero or very low, increase to first minor tick
