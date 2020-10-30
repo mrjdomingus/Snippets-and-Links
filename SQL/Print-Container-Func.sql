@@ -6,7 +6,7 @@ SET QUOTED_IDENTIFIER ON
 GO
 
 -- =============================================
--- Author:		Ivan Kashperuk
+-- Author: Maciej Plaza,
 -- Create date: 2020-10-28
 -- Description:	Display contents of an X++ container from SQL database field
 -- Adapted to scalar-valued function by Marcel Domingus
