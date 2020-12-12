@@ -52,6 +52,9 @@ run `update-grub` && **reboot** <br>
 * Python Docstring Generator
 * Pylance
 * Trailing Spaces (by Shardul Mahadik)
+* Duplicate actions
+* Git Graph
+* reStructuredText 
 
 * [Fira Code Font](https://github.com/tonsky/FiraCode/wiki/VS-Code-Instructions)
 * Ligatures Limited
