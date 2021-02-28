@@ -1,0 +1,20 @@
+name: py39
+
+channels:
+  - default
+  - conda-forge
+  
+dependencies:
+  - python=3.9.1
+  - pandas
+  - numexpr
+  - Bottleneck
+  - pip
+  - pip:
+    - requests
+  - cookiecutter
+  - pylint
+  - pytest
+  - black
+  - toolz
+  
