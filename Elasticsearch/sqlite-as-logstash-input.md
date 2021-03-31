@@ -89,6 +89,68 @@ SELECT id,
   LEFT JOIN company_geolocation ON company.id = company_geolocation.companyid
 ```
 
+Save the file to `company-minimal.sql` inside the folder containing the `logstash.conf` file.
+
+# Logstash configuration
+
+We now need to write a Logstash configuration to process the records returned by the query and populate the `company-minimal` index.
+Support for SQL databases is provided by the [Logstash jdbc input plugin](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-jdbc.html).
+
+Open a text editor and paste the following:<br>
+```nput {
+  jdbc {
+    jdbc_driver_library => "sqlitejdbc-v056.jar"
+    jdbc_driver_class => "org.sqlite.JDBC"
+    jdbc_connection_string => "jdbc:sqlite:crunchbase.db"
+    jdbc_user => ""
+    jdbc_password => ""
+    statement_filepath => "company-minimal.sql"
+    jdbc_paging_enabled => true
+    jdbc_page_size => 10000
+  }
+}
+
+filter {
+  mutate {
+    remove_field => ["@timestamp", "@version"]
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => "localhost:9200"
+    manage_template => false
+    action => "index"
+    index => "company-minimal"
+    document_type => "CompanyMinimal"
+  }
+}
+```
+
+The `statement_filepath` parameter specifies the path to the file containing the SQL query; the `jdbc_*` parameters set the database connection string and authentication options.
+
+The `mutate` filter is configured to remove default Logstash fields which are not needed in the destination index.
+
+The `output` section specifies the destination index; `manage_template` is set to `false` as the index mapping has been explicitly defined in the previous steps.
+
+Save the file to `company-minimal.conf` in the logstash configuration folder.
+
+Copy the SQLite database `crunchbase.db` to the logstash configuration folder and run the following command:<br>
+`logstash/bin/logstash -f company-minimal.conf`
+
+Logstash will execute the query and populate the index.
+
+# Searching the index
+
+To retrieve all documents in the newly created index execute the following HTTP request using Kibana Dev Tools or Postman:<br>
+```
+GET localhost:9200/company-minimal/_search
+{
+    "query": {
+        "match_all": {}
+    }
+}
+```
 
 Also see:
 * Github repo for the Xerial SQLite JDBC Driver: [https://github.com/xerial/sqlite-jdbc](https://github.com/xerial/sqlite-jdbc)
