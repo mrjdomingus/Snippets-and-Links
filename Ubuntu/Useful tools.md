@@ -175,3 +175,13 @@ _Note: Port 9000 is the general port used by Portainer for the UI access. Port 8
 # Swap info
 * [SwapFaq](https://help.ubuntu.com/community/SwapFaq)
 
+# Regenerate APT lists cache
+```
+sudo apt-get clean
+cd /var/lib/apt
+sudo mv lists lists.old
+sudo mkdir -p lists/partial
+sudo apt-get clean
+sudo apt-get update
+sudo apt update
+```
