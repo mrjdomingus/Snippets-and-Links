@@ -52,7 +52,7 @@ run `update-grub` && **reboot** <br>
 * Python Docstring Generator
 * Pylance
 * Trailing Spaces (by Shardul Mahadik)
-* Duplicate actions
+* Duplicate action
 * Git Graph
 * reStructuredText 
 
