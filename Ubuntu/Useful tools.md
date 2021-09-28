@@ -63,6 +63,44 @@ run `update-grub` && **reboot** <br>
 Set below setting to prevent locks when updating VS Code (on Windows)<br>
 ```"update.enableWindowsBackgroundUpdates": false```
 
+### Note 2
+How to export installed VS Code extensions to a different machine:
+
+Machine A:
+* In the Visual Studio Code PowerShell terminal:<br>
+`code [or code-insiders] --list-extensions > extensions.list` 
+
+Example content of `extensions.list`:
+```
+byi8220.indented-block-highlighting
+christian-kohler.npm-intellisense
+CoenraadS.bracket-pair-colorizer-2
+dbaeumer.vscode-eslint
+eamodio.gitlens
+eg2.vscode-npm-script
+formulahendry.auto-close-tag
+Gruntfuggly.todo-tree
+mhutchie.git-graph
+mrmlnc.vscode-duplicate
+ms-azuretools.vscode-docker
+ms-python.python
+ms-python.vscode-pylance
+ms-toolsai.jupyter
+ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
+njpwerner.autodocstring
+quicktype.quicktype
+shardulm94.trailing-spaces
+Tyriar.sort-lines
+vscode-icons-team.vscode-icons
+xabikos.JavaScriptSnippets
+```
+
+Machine B:
+* Copy `extension.list` to machine B
+* In the Visual Studio Code PowerShell terminal:<br>
+`cat extensions.list |% { code [or code-insiders] --install-extension $_}`
+
 ## Gitkraken
 
 [https://www.gitkraken.com/](https://www.gitkraken.com/)<br>
