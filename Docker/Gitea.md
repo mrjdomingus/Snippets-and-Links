@@ -11,7 +11,7 @@ Also see: [https://docs.gitea.io/en-us/backup-and-restore/](https://docs.gitea.i
 Create dump file from outside container:<br>
 ```docker exec -u git -it -w /tmp $(docker ps -qf "name=gitea_server_1") bash -c '/app/gitea/gitea dump -c /data/gitea/conf/app.ini'```
 
-**Restore steps**
+**Restore steps**<br>
 Copy *.zip to /tmp in container
 ```
 cd  /tmp
