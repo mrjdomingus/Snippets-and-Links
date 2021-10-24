@@ -13,7 +13,7 @@ Create dump file from outside container:<br>
 
 **Restore steps**<br>
 
-Copy *.zip to /tmp in container.
+Copy dump zip file to /tmp in container.
 ```
 cd  /tmp
 unzip gitea-dump-nnnnnnnnnn.zip
