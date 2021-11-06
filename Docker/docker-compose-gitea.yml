@@ -2,10 +2,11 @@ version: "2"
 
 volumes:
   gitea-data:
-    driver: local
+    external:
+      name: gitea-data
   gitea-config:
-    driver: local
-
+    external:
+      name: gitea-config
 
 services:
   gitea:
