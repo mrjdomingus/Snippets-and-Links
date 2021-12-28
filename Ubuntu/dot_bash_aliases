@@ -3,3 +3,4 @@ alias restart_docker='docker stop $(docker ps -aq) && sudo systemctl restart Net
 alias start_portainer='docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce'
 alias start_selenium='docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" selenium/standalone-firefox:4.1.0-20211209'
 alias start_sql2019='docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$SA_PASSWORD" -v sql2019data:/var/opt/mssql --name sql2019 -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest'
+alias dockdang='docker rmi $(docker images -f "dangling=true" -q)'
