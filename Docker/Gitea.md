@@ -8,8 +8,12 @@
 
 Also see: [https://docs.gitea.io/en-us/backup-and-restore/](https://docs.gitea.io/en-us/backup-and-restore/)
 
+For the location of `app.ini` check environment variable `GITEA_APP_INI` when using a rootless docker image (probably `/etc/gitea/app.ini`).
+
+In the rootless gitea image the `gitea` executable is probably located in `/usr/local/bin`.
+
 Create dump file from outside container:<br>
-```docker exec -u git -it -w /tmp $(docker ps -qf "name=gitea_server_1") bash -c '/app/gitea/gitea dump -c /data/gitea/conf/app.ini'```
+```docker exec -u git -it -w /tmp $(docker ps -qf "name=<NAME_OF_DOCKER_CONTAINER>") bash -c '/path/to/executable/gitea dump -c /path/to/app.ini'```
 
 **Backup from within container**<br>
 
