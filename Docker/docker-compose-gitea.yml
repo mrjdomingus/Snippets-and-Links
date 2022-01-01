@@ -2,15 +2,13 @@ version: "2"
 
 volumes:
   gitea-data:
-    external:
-      name: gitea-data
+    external: true
   gitea-config:
-    external:
-      name: gitea-config
+    external: true
 
 services:
   gitea:
-    image: gitea/gitea:1.15.6-rootless
+    image: gitea/gitea:latest-rootless
     restart: always
     volumes:
       - gitea-data:/var/lib/gitea
