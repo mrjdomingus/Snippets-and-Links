@@ -13,7 +13,9 @@ For the location of `app.ini` check environment variable `GITEA_APP_INI` when us
 In the rootless gitea image the `gitea` executable is probably located in `/usr/local/bin`.
 
 Create dump file from outside container:<br>
-```docker exec -u git -it -w /tmp $(docker ps -qf "name=<NAME_OF_DOCKER_CONTAINER>") bash -c '/path/to/executable/gitea dump -c /path/to/app.ini'```
+```docker exec -u git -it -w /tmp $(docker ps -qf "name=<NAME_OF_DOCKER_CONTAINER>") bash -c '/path/to/executable/gitea dump -c /path/to/app.ini'```<br><br>
+This should result in a zip-file named something like `gitea-dump-1641039649.zip` in the container's `/tmp` folder.<br><br>
+Copy the zip-file out of the container for safe keeping.
 
 **Backup from within container**<br>
 
@@ -30,7 +32,7 @@ Run `./gitea dump -c /path/to/app.ini` in the Gitea installation directory (`/us
 
 **Restore steps**<br>
 
-Copy dump zip file to /tmp in container.
+Copy dump zip file to `/tmp` in container.
 ```
 cd  /tmp
 unzip gitea-dump-nnnnnnnnnn.zip
