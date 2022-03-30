@@ -5,7 +5,7 @@ Complete these steps as **root**.
 1. `sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules`<br>
 Note: Choose "Internet Site" and other default options if prompted with questions in terminal.<br> Run `sudo dpkg-reconfigure postfix` should you need to reconfigure postfix afterwards.
 2. **Replace** the contents of the Postfix config file by running `sudo nano /etc/postfix/main.cf` and replace entirely with the content of [Working-sample-of-Postfix-main.cf](https://raw.githubusercontent.com/mrjdomingus/Snippets-and-Links/master/Ubuntu/Working-sample-of-Postfix-main.cf)
-3. Make the appropriate changes in `/etc/postfix/main.cf` as indicated in the file, i.e. change `myhostname` and `smtp_sasl_password_maps`.
+3. Make the appropriate changes in `/etc/postfix/main.cf` as indicated in the file, i.e. change `myhostname` and `smtp_sasl_password_maps` and `relayhost`.
 4. Restart Postfix service by running `sudo systemctl restart postfix.service`
 5. Verify that TCP port #25 is in LISTENing state on 127.0.0.1: `netstat -tulpn | grep :25`
 6. Replace `you@example.com` with your email adddress in the following code and test sending mail:<br>
