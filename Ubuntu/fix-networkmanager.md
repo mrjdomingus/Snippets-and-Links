@@ -17,6 +17,8 @@ The following steps worked for me, the reloading of the kernel modules might not
 * reinstall network-manager
 
 ```
+#!/usr/bin/bash
+
 sudo rmmod e1000
 sudo rmmod e1000e
 sudo rmmod igb
