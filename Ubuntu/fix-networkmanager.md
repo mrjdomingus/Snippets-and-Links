@@ -31,6 +31,7 @@ sudo dhclient ens33
 
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get purge network-manager
+sudo apt-get install network-manager
 ```
 
 Also see [https://askubuntu.com/questions/1267043/virtual-machine-ubuntu-20-04-lts-connect-network-is-unreachable](https://askubuntu.com/questions/1267043/virtual-machine-ubuntu-20-04-lts-connect-network-is-unreachable)
