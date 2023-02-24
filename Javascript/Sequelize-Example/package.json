@@ -12,7 +12,7 @@
   "dependencies": {
     "pg": "^7.15.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^5",
+    "sequelize": "^6",
     "tedious": "^6.6.5"
   }
 }
