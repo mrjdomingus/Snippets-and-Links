@@ -20,3 +20,6 @@ Then restart the service:
 
 # Restart docker after VM sleep
 docker stop $(docker ps -aq) && sudo systemctl restart NetworkManager docker
+
+# Test NVIDIA Docker
+`docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark`
