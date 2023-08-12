@@ -25,4 +25,7 @@ docker stop $(docker ps -aq) && sudo systemctl restart NetworkManager docker
 `docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark`
 
 # Backup Docker image to compressed file
-`docker save image:tag | bzip2 > /device/image_backups/image_tag.bz2`
+`docker save image:tag | gzip -c | pv > /device/image_backups/image_tag.gz`
+
+# Restore Docker image from compressed file
+`gunzip -c image_tag.gz | pv | docker load`
