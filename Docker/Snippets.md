@@ -23,3 +23,6 @@ docker stop $(docker ps -aq) && sudo systemctl restart NetworkManager docker
 
 # Test NVIDIA Docker
 `docker run --gpus all nvcr.io/nvidia/k8s/cuda-sample:nbody nbody -gpu -benchmark`
+
+# Backup Docker image to compressed file
+`docker save image:tag | bzip2 > /device/image_backups/image_tag.bz2`
