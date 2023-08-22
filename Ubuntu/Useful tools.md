@@ -73,12 +73,13 @@ Machine A:
 Example content of `extensions.list`:
 ```
 byi8220.indented-block-highlighting
-christian-kohler.npm-intellisense
-CoenraadS.bracket-pair-colorizer-2
 dbaeumer.vscode-eslint
 eamodio.gitlens
-eg2.vscode-npm-script
+esbenp.prettier-vscode
 formulahendry.auto-close-tag
+GitHub.copilot
+GitHub.copilot-chat
+GitHub.copilot-labs
 Gruntfuggly.todo-tree
 mhutchie.git-graph
 mrmlnc.vscode-duplicate
@@ -88,12 +89,18 @@ ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
 ms-toolsai.jupyter-renderers
+ms-toolsai.vscode-jupyter-cell-tags
+ms-toolsai.vscode-jupyter-slideshow
+ms-vscode-remote.remote-containers
+ms-vscode-remote.remote-ssh
+ms-vscode-remote.remote-ssh-edit
+ms-vscode.remote-explorer
 njpwerner.autodocstring
 quicktype.quicktype
+ritwickdey.LiveServer
 shardulm94.trailing-spaces
 Tyriar.sort-lines
 vscode-icons-team.vscode-icons
-xabikos.JavaScriptSnippets
 ```
 
 Machine B:
