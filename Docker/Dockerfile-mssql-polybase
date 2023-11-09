@@ -1,0 +1,81 @@
+# mssql-server-polybase
+# Maintainers: Microsoft Corporation
+# GitRepo: https://github.com/Microsoft/mssql-docker
+
+# Base OS layer: Ubuntu 20.04 LTS
+FROM ubuntu:20.04
+
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && \
+    # Install GNUPG
+    apt-get install -y gnupg && \
+    apt-get install -y kgpg
+
+# Install prerequistes including repo config for SQL server and PolyBase.
+RUN export DEBIAN_FRONTEND=noninteractive && \
+    apt-get update && \
+    apt-get install -yq apt-transport-https curl && \
+    # # Get official Microsoft repository configuration
+    curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
+    curl https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2022.list | tee /etc/apt/sources.list.d/mssql-server-2022.list && \
+    apt-get update && \
+    # Install PolyBase will also install SQL Server via dependency mechanism.
+    apt-get install -yq mssql-server-polybase && \
+    # Cleanup the Dockerfile
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists
+
+# Run SQL Server process
+CMD /opt/mssql/bin/sqlservr
+
+# FYI, where to find MS SQL Server 2022 packages list for Ubuntu 20.04
+# https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2022.list
+
+# >>> Run Docker build via:
+# docker build --no-cache -t mssql-polybase-2022 --progress=plain . 2>&1 | tee build.log
+
+# >>> Create a Docker volume for SQL data:
+# docker volume create sql2022data
+# >>> Start container via:
+# docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$SA_PASSWORD" -v sql2022data:/var/opt/mssql --name sql2022 -p 1433:1433 -d mssql-polybase-2022:latest
+
+# >>> To enable PolyBase, connect to the SQL Server instance and execute the below T-SQL statements:
+# USE master;
+# GO
+# EXEC sp_configure 'show advanced options', '1';
+# RECONFIGURE;
+# GO
+# exec sp_configure @configname = 'polybase enabled', @configvalue = 1;
+# RECONFIGURE;
+# GO
+# >>> Show all configuration options:
+# EXEC sp_configure;
+# GO
+# >>> Restart SQL Server instance!
+# >>> After PolyBase feature is enabled, One can run below sample sanity statements to check if PolyBase queries are working.
+# create database PolyTestDb
+# GO
+
+# use PolyTestDb
+# go
+
+# CREATE TABLE T1 (column1 nvarchar(50))
+# GO
+
+# INSERT INTO T1 values ('Hello PolyBase!')
+# GO
+
+# CREATE MASTER KEY ENCRYPTION BY PASSWORD = 'YourStrong!Master!Passw0rd!'
+# GO
+
+# CREATE DATABASE SCOPED CREDENTIAL SaCredential WITH IDENTITY = 'sa', Secret = 'YourStrong!Passw0rd'
+# GO
+
+# CREATE EXTERNAL DATA SOURCE loopback_data_src WITH (LOCATION = 'sqlserver://127.0.0.1', CREDENTIAL = SaCredential)
+# GO
+
+# CREATE EXTERNAL TABLE T1_external (column1 nvarchar(50))  with (location='PolyTestDb..T1', DATA_SOURCE=loopback_data_src)
+# GO
+
+# select * from T1_external
+# GO
