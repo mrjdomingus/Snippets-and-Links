@@ -1,18 +1,14 @@
+# Prefer this setup
+# Do not forget to create empty subfolders data and config in the same folder as this docker compose yaml file!
 version: "2"
 
-volumes:
-  gitea-data:
-    external: true
-  gitea-config:
-    external: true
-
 services:
-  gitea:
+  server:
     image: gitea/gitea:latest-rootless
     restart: always
     volumes:
-      - gitea-data:/var/lib/gitea
-      - gitea-config:/etc/gitea
+      - ./data:/var/lib/gitea
+      - ./config:/etc/gitea
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
     ports:
