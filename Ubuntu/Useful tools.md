@@ -1,7 +1,9 @@
 # Useful tools to install on Ubuntu
 
 ## Curl
-`sudo apt install curl`
+```
+sudo apt install curl
+```
 
 ## Chrome for Desktop
 
@@ -68,7 +70,9 @@ How to export installed VS Code extensions to a different machine:
 
 Machine A:
 * In the Visual Studio Code PowerShell terminal:<br>
-`code [or code-insiders] --list-extensions > extensions.list` 
+```
+code [or code-insiders] --list-extensions > extensions.list
+```
 
 Example content of `extensions.list`:
 ```
@@ -106,7 +110,9 @@ vscode-icons-team.vscode-icons
 Machine B:
 * Copy `extension.list` to machine B
 * In the Visual Studio Code PowerShell terminal:<br>
-`cat extensions.list |% { code [or code-insiders] --install-extension $_}`
+```
+cat extensions.list |% { code [or code-insiders] --install-extension $_}
+```
 
 ## Gitkraken
 
