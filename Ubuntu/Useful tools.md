@@ -224,7 +224,9 @@ sudo apt install build-essential
 ```
 
 # Header files and static libraries for python development / building wheels
-`sudo apt-get install python3-dev`
+```
+sudo apt-get install python3-dev
+```
 
 # Swap info
 * [SwapFaq](https://help.ubuntu.com/community/SwapFaq)
