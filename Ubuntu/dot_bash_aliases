@@ -5,3 +5,4 @@ alias start_selenium='docker run -d -p 4444:4444 -p 7900:7900 --shm-size="2g" se
 alias start_sql2019='docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$SA_PASSWORD" -v sql2019data:/var/opt/mssql --name sql2019 -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-latest'
 alias start_sql2022='docker run -e "ACCEPT_EULA=Y" -e SA_PASSWORD=$SA_PASSWORD" -e MSSQL_AGENT_ENABLED=True -v sql2022data:/var/opt/mssql --hostname ubuntu-sql-2022-vm --name sql2022 -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest'
 alias dockdang='docker rmi $(docker images -f "dangling=true" -q)'
+alias startjlb='jupyter lab --notebook-dir=/'
