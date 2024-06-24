@@ -1,0 +1,17 @@
+version: "2"
+
+services:
+  server:
+    image: gitea/gitea:1.22-nightly-rootless
+    restart: always
+    volumes:
+      # Create subfolders data and config first and expose to container as bind volume
+      # Create a certs subfolder in home dir and expose to container as bind volume
+      - ./data:/var/lib/gitea
+      - ./config:/etc/gitea
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+      - /home/azureuser/certs:/var/lib/gitea/custom
+    ports:
+      - "3000:3000"
+      - "2222:2222"
