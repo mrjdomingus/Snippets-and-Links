@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-# Check if the hostname and username is provided as an argument
+# Check if the hostname and username are provided as an argument
 if [ $# -ne 2 ]; then
     echo "Usage: $0 <hostname> <username>"
     exit 1
