@@ -7,3 +7,4 @@ alias start_sql2019='docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$SA_PASSWORD"
 alias start_sql2022='docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=$SA_PASSWORD" -e MSSQL_AGENT_ENABLED=True -v sql2022data:/var/opt/mssql --hostname ubuntu-sql-2022-vm --name sql2022 -p 1433:1433 -d mcr.microsoft.com/mssql/server:2022-latest'
 alias dockdang='docker rmi $(docker images -f "dangling=true" -q)'
 alias startjlb='jupyter lab --notebook-dir=/'
+alias start_openwebui='docker run -d -p 3000:8080 --gpus all -e WEBUI_AUTH=False --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:cuda'
