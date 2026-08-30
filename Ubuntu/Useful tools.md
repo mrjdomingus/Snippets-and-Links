@@ -247,3 +247,9 @@ sudo apt-get clean
 sudo apt-get update
 sudo apt update
 ```
+
+# Install 7zip
+```
+sudo apt update
+sudo apt install p7zip-full p7zip-rar
+```
