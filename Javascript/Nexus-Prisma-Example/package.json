@@ -10,7 +10,7 @@
     "@types/morgan": "^1.7.37",
     "apollo-server-express": "^2.9.15",
     "compression": "^1.7.4",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "helmet": "^3.21.2",
     "morgan": "^1.9.1",
     "nexus": "0.10.0",
